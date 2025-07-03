@@ -1,31 +1,35 @@
-# Meta Tracker
+# 🎯 Meta Tracker
 
-Gerenciador de metas e submetas feito em C. Permite adicionar, editar, excluir, listar e marcar como concluídas metas com prioridade. Cada meta pode ter até 10 submetas.
+Meta Tracker é um projeto em C desenvolvido para ajudar no gerenciamento de metas pessoais, com suporte para submetas, marcação de conclusão, edição e persistência dos dados em arquivo.
 
-## Funcionalidades
-- CRUD de metas e submetas
-- Persistência em arquivo (`data/metas.txt`)
-- Interface por terminal (modo texto)
-- Executável gerado via Makefile (Linux) ou `.exe` (Windows)
+> ⚙️ Projeto feito inteiramente em C, com foco em prática de lógica, modularização, uso de structs e manipulação de arquivos.
 
-## Compilação
+---
+
+## ✨ Funcionalidades
+
+- Adicionar meta (com título, descrição e submetas)
+- Listar metas
+- Editar metas
+- Excluir metas
+- Marcar como concluída
+- Salvar em arquivo (`data/metas.txt`)
+- Carregar metas do arquivo
+- Interface via terminal
+
+---
+
+## 📁 Estrutura do projeto
 
 ```bash
-make
-```
-
-## Execução
-
-```bash
-make run
-```
-
-## Estrutura
-
-- `src/`: código-fonte
-- `data/`: arquivo com as metas
-- `build/`: binários gerados
-
-## Licença
-
-MIT
+meta-tracker/
+├── data/
+│   └── metas.txt          # Arquivo salvo das metas
+├── src/
+│   ├── main.c             # Função principal
+│   ├── menu.c/.h          # Lida com o menu e a navegação
+│   ├── metas.c/.h         # Todas as funções de manipulação das metas
+│   └── utils.c/.h         # Funções utilitárias (ex: limpar buffer)
+├── build/                 # Pasta onde o executável é gerado
+├── Makefile               # Compilação do projeto
+└── README.md              # Este arquivo
